@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    label 'linux'
+  }
   parameters {
     string(name: 'branch', defaultValue: 'master', description: 'Branch to build')
     booleanParam(name: 'runTests', defaultValue: true, description: 'Whether to run tests')
