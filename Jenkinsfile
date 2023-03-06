@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        // Build steps here
+        sh 'echo "Build"'
       }
     }
     stage('Test') {
@@ -15,12 +15,12 @@ pipeline {
         expression { params.runTests }
       }
       steps {
-        // Test steps here
+        sh 'echo "Test"'
       }
     }
     stage('Deploy') {
       steps {
-        // Deployment steps here
+        sh 'echo "Deploy"'
       }
     }
   }
