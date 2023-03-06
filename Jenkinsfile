@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'python'
+    label 'linux'
   }
   parameters {
     string(name: 'branch', defaultValue: 'master', description: 'Branch to build')
