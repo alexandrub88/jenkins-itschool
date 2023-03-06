@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'linux'
+    name 'JenkinsAgent1'
   }
   parameters {
     string(name: 'branch', defaultValue: 'master', description: 'Branch to build')
