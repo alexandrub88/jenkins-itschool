@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo '''Ai ales ${params.BUILD_TYPE} ca tipul build-ului.''''
+                sh "echo '''Ai ales ${params.BUILD_TYPE} ca tipul build-ului.'''"
             }
         }
         stage('Test') {
@@ -16,12 +16,12 @@ pipeline {
                 expression { params.RUN_TESTS }
             }
             steps {
-                sh 'echo '''Deoarece parametrul RUN_TEST este ${params.BUILD_TYPE} afisam acest mesaj.''''
+                sh "echo '''Deoarece parametrul RUN_TEST este ${params.BUILD_TYPE} afisam acest mesaj.'''"
             }
         }
         stage('Deploy') {
             steps {
-                sh 'echo '''Facem deploy la aplicatie. Versiunea curenta este: ${params.APP_VERSION}''''
+                sh "echo '''Facem deploy la aplicatie. Versiunea curenta este: ${params.APP_VERSION}'''"
             }
         }
     }
