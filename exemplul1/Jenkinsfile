@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "echo "Ai ales sa faci deploy-ul in ${params.DEPLOY_ENV}""
+                sh "echo '''Ai ales sa faci deploy-ul in ${params.DEPLOY_ENV}'''"
             }
         }
         stage('Felicitari') {
@@ -14,9 +14,9 @@ pipeline {
                 expression {params.DEPLOY_ENV == 'prod'}
             }
             steps {
-                sh "echo "Felicitari, ai ales sa faci deploy-ul in ${params.DEPLOY_ENV}. Ce ar putea merge rau in asta?""
+                sh "echo '''Felicitari, ai ales sa faci deploy-ul in ${params.DEPLOY_ENV}. Ce ar putea merge rau in asta?'''"
                 sh "sleep 10"
-                sh "echo "Felicitari :X esti somer""
+                sh "echo '''Felicitari :X esti somer'''"
             }
         }
     }
