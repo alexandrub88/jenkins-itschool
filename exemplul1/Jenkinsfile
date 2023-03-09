@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    parameters {
+        choice(name: 'DEPLOY_ENV', choices: ['dev', 'staging', 'prod'], description: 'Mediul in care doresti deploy-ul.')
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Ai ales sa faci deploy-ul in ${params.DEPLOY_ENV}"'
+            }
+        }
+        stage('Felicitari') {
+            when { 
+                expression {params.DEPLOY_ENV == 'prod'}
+            }
+            steps {
+                sh 'echo "Felicitari, ai ales sa faci deploy-ul in ${params.DEPLOY_ENV}. Ce ar putea merge rau in asta?"'
+                sh 'sleep 10'
+                sh 'echo "Felicitari :X esti somer"'
+            }
+        }
+    }
+}
